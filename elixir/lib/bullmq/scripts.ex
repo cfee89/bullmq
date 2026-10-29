@@ -1390,7 +1390,7 @@ defmodule BullMQ.Scripts do
 
     # Pack job_ids and tokens using msgpack for the Lua script
     args = [
-      Keys.key(ctx),
+      Keys.key_prefix(ctx),
       Msgpax.pack!(tokens, iodata: false),
       Msgpax.pack!(job_ids, iodata: false),
       duration
